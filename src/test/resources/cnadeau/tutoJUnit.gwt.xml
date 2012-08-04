@@ -3,7 +3,5 @@
   <!-- Inherit our applications main module.                      -->
   <inherits name='cnadeau.tuto' />
 
-  <!-- Specify the path to any remote services.                   -->
-  <servlet path="/tuto/greet" class="cnadeau.server.GreetingServiceImpl" />
 
 </module>
