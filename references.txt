@@ -1,1 +1,10 @@
 http://labs.excilys.com/2011/06/21/gwt-maven-eclipse-reloaded/
+
+
+to debug:
+
+gwt:compile
+gwt:debug
+remote app on correct port
+
+url : http://127.0.0.1:8080/gwt.tutorial/tuto.html?gwt.codesvr=127.0.1.1:9997

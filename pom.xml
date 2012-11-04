@@ -11,8 +11,6 @@
 	<name>GWT Maven Archetype</name>
 
 	<properties>
-		<!-- Convenience property to set the GWT version -->
-		<gwtVersion>2.5.0-rc1</gwtVersion>
 		<!-- GWT needs at least java 1.5 -->
 		<webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -20,36 +18,27 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.google.gwt</groupId>
-			<artifactId>gwt-servlet</artifactId>
-			<version>${gwtVersion}</version>
-			<scope>runtime</scope>
+			<groupId>com.netappsid</groupId>
+			<artifactId>framework.interfaces</artifactId>
+			<version>0.0.2-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>com.netappsid</groupId>
+			<artifactId>FormBuilder</artifactId>
+			<version>0.0.2-SNAPSHOT</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>com.google.gwt</groupId>
 			<artifactId>gwt-user</artifactId>
-			<version>${gwtVersion}</version>
-			<scope>provided</scope>
+			<version>2.5.0-rc2</version>
 		</dependency>
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.7</version>
-			<scope>test</scope>
+			<groupId>com.smartgwt</groupId>
+			<artifactId>smartgwt</artifactId>
+			<version>2.5-patch</version>
 		</dependency>
-		<dependency>
-			<groupId>javax.validation</groupId>
-			<artifactId>validation-api</artifactId>
-			<version>1.0.0.GA</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>javax.validation</groupId>
-			<artifactId>validation-api</artifactId>
-			<version>1.0.0.GA</version>
-			<classifier>sources</classifier>
-			<scope>test</scope>
-		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -62,7 +51,7 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>gwt-maven-plugin</artifactId>
-				<version>2.5.0-rc1</version>
+				<version>2.5.0-rc2</version>
 				<executions>
 					<execution>
 						<goals>
@@ -89,7 +78,21 @@
 					<hostedWebapp>${webappDirectory}</hostedWebapp>
 					<bindAddress>0.0.0.0</bindAddress>
 					<debugPort>8001</debugPort>
+					<strict>true</strict>
 				</configuration>
+				
+				<dependencies>
+					<dependency>
+						<groupId>com.google.gwt</groupId>
+						<artifactId>gwt-dev</artifactId>
+						<version>2.5.0-rc2</version>
+					</dependency>
+					<dependency>
+						<groupId>com.google.gwt</groupId>
+						<artifactId>gwt-user</artifactId>
+						<version>2.5.0-rc2</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 
 			<!-- Copy static web files before executing gwt:run -->
